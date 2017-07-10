@@ -1,0 +1,23 @@
+#Configuration
+
+#First of all, make sure to create a bot application at https://apps.twitter.com 
+#After setting it up, generate an access token
+#To fill this configuration file, you'll need the Consumer Key (API Key), Consumer Secret (API Secret), Access Token and Access Token Secret
+#Then, write all these informations next to the correct fields, between quotes
+#Don't forget to make the access level read and write!
+
+
+#Consumer Key (API Key) :
+API_KEY = '<API Key here>'
+
+#Consumer Secret (API Secret) :
+API_SECRET = '<API Secret here>'
+
+#Access Token :
+TOKEN = '<Access Token here>'
+
+#Access Token Secret :
+TOKEN_SECRET = '<Access Token Secret here>'
+
+
+#Once you're done, rename this file to config.py
