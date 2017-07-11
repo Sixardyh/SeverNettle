@@ -51,6 +51,7 @@ except KeyError:
 
 #Get text from tweet
 text = js['text']
+isMedia = False
 
 #Check if there are URLS in the tweet
 if js['entities']['urls']:
