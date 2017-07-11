@@ -18,7 +18,7 @@ bot = Twython(API_KEY, API_SECRET, TOKEN, TOKEN_SECRET)
 
 
 #Get status
-status = (bot.get_home_timeline(user_id='2196922086', count=1)) #This id is the ID of @OnePlus, change if needed
+status = (bot.get_user_timeline(user_id='2196922086', count=1)) #This id is the ID of @OnePlus, change if needed
 tweet = status[0]
 dump = json.dumps(tweet)
 js = json.loads(dump)
@@ -111,6 +111,7 @@ for c in text:
     else:
         output += c
 output = output[::-1]
+
 
 #Reply to tweet
 if isMedia is True:
