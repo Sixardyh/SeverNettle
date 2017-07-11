@@ -108,8 +108,7 @@ for c in text:
         output += flip[c]
     else:
         output += c
-output = output[::-1]
-
+output = "@oneplus " + output[::-1] #Defaults to the oneplus twitter account, change if needed
 
 #Reply to tweet
 if isMedia is True:
