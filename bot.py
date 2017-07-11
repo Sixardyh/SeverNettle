@@ -35,7 +35,6 @@ try:
 except FileNotFoundError:
     print(".lasttweet.txt not found; creating file and continuing...")
     open('.lasttweet.txt', 'a').close()
-    pass
 
 #Check if tweet is a reply
 if js['in_reply_to_status_id'] != None:
@@ -90,7 +89,6 @@ try:
 
 except KeyError:
     print("No media in tweet; continuing...")
-    pass
 
 
 #List of chars + their flipped counterpart
