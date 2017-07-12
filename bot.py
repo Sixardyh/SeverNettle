@@ -86,6 +86,10 @@ try:
         downloadVideo(0)
         print(mediaType + " downloaded, flipping video...")
         os.system("ffmpeg -i video.mp4 -vf 'transpose=2,transpose=2' output.mp4") #https://stackoverflow.com/a/9570992/8225853
+        
+        os.system("ffmpeg -i output.mp4 -t 00:00:29 -async 1 upload.mp4") #Reduce length of video until I found out how to upload longer videos
+        
+
         text = text.replace(js['extended_entities']['media'][0]['url'], "")
 
 except KeyError:
@@ -111,6 +115,7 @@ for c in text:
         output += c
 output = "@oneplus " + output[::-1] #Defaults to the oneplus twitter account, change if needed
 
+
 #Reply to tweet
 if isMedia is True:
     if mediaType == 'photo':
@@ -129,7 +134,7 @@ if isMedia is True:
         bot.update_status(status=output, in_reply_to_status_id=tweetID, media_ids=uploaded_media)
 
     elif mediaType == 'animated_gif' or mediaType == 'video':
-        with open('./output.mp4', 'rb') as video:
+        with open('./upload.mp4', 'rb') as video:
             response = bot.upload_video(media=video, media_type='video/mp4')
         bot.update_status(status=output, in_reply_to_status_id=tweetID, media_ids=[response['media_id']])
 
